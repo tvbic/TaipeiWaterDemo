@@ -9,6 +9,7 @@ import android.widget.Toast;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BmiActivity extends AppCompatActivity
@@ -41,6 +42,24 @@ public class BmiActivity extends AppCompatActivity
         BigDecimal result = calculateResult();
 
         lblResult.setText(result.toString());
+
+        showDialogMessage("計算結果: " + result.toString());
+    }
+
+    private void showDialogMessage(String msg)
+    {
+        new AlertDialog.Builder(this)
+                .setMessage(msg)
+                .setNegativeButton("返回", null)
+                .setPositiveButton("清除", (dialog, which) -> clearData())
+                .show();
+    }
+
+    private void clearData()
+    {
+        txtHeight.setText("");
+        txtWeight.setText("");
+        lblResult.setText("");
     }
 
     private BigDecimal calculateResult()
