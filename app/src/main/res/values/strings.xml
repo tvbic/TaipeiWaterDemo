@@ -4,4 +4,8 @@
     <string name="height">身高:</string>
     <string name="weight">體重:</string>
     <string name="calculate">計算</string>
+    <string name="title_activity_bmi_jetpack">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
